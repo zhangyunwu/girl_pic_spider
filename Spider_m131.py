@@ -9,7 +9,8 @@ class Spider_mm(object):
         self.page_num = page_num
 
         self.headers = {
-            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36'
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+            'referer': 'https://www.m131.cc/xinggan/'
         }
 
 
@@ -67,7 +68,7 @@ class Spider_mm(object):
             response = requests.get(pic_page_url, headers = self.headers)
             html = etree.HTML(response.content)
 
-            pic_url =html.xpath(r'//div[@class="big-pic"]//img/@src')[0]
+            pic_url = html.xpath(r'//p[@align="center"]/a/img/@src')[0]
             pic_urls.append(pic_url)
 
         return pic_urls
@@ -98,7 +99,7 @@ def main():
         pass
 
     # 爬取页数
-    page_num = input('请输入需要爬取的页数（从第一页开始）：')
+    page_num = 50
 
     spider = Spider_mm(page_num)
 
