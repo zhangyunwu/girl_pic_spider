@@ -8,3 +8,7 @@ get pictures from https://www.m131.cc/xinggan/
 直接运行Spider_m131.py即可。
 
 已添加多线程支持，创建最多8个线程的线程池下载图片，本人实测下载987套图片耗时约10小时。为避免访问太过频繁被服务器切断故止步于此。
+
+987套图片体积约5GB
+[](https://github.com/zhangyunwu/girl_pic_spider/blob/master/images/m131_result_0.png)
+[](https://github.com/zhangyunwu/girl_pic_spider/blob/master/images/m131_result_1.png)
