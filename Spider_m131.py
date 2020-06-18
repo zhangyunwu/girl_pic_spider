@@ -146,11 +146,11 @@ def main():
     for page_url in page_urls:
 
         # 获取套图标题及地址
-        [pic_set_titiles, pic_set_urls] = spider.get_pic_set_urls(page_url)
+        [pic_set_titles, pic_set_urls] = spider.get_pic_set_urls(page_url)
         all_task = []
         with ThreadPoolExecutor(8) as executor:
             for n, pic_set_url in enumerate(pic_set_urls):
-                pic_set_title = pic_set_titiles[n]
+                pic_set_title = pic_set_titles[n]
                 task = executor.submit(download_thread, spider, pic_set_title, pic_set_url)
                 all_task.append(task)
                 time.sleep(1)
